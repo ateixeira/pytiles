@@ -3,6 +3,8 @@ import tornado.web
 import os.path
 import tornado.httpserver
 
+from controller.IndexHandler import IndexHandler
+
 from config import Env
 
 class Application(tornado.web.Application):
@@ -11,6 +13,8 @@ class Application(tornado.web.Application):
     """
     def __init__(self):
         routes = [
+            (r"/", IndexHandler),                   #GET retrieve all posts
+            # (r"/(.*)", NotFoundHandler),            #404 links and everything else
         ];
         
         settings = dict(

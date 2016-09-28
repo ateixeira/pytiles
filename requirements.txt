@@ -3,3 +3,4 @@ greenlet
 motor
 pymongo
 tornado
+futures
